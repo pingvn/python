@@ -28,10 +28,10 @@ def check_1(lst_obj):
 
     Сложность: !!!.
     """
-    lst_to_set = set(lst_obj)  # !!!
+    lst_to_set = set(lst_obj)  # O(N)
     return lst_to_set
-
-
+	
+#T(n) =N
 #############################################################################################
 def check_2(lst_obj):
     """Функция должная вернуть True, если все элементы списка различаются.
@@ -43,12 +43,12 @@ def check_2(lst_obj):
 
     Сложность: !!!.
     """
-    for j in range(len(lst_obj)):          # !!!
-        if lst_obj[j] in lst_obj[j+1:]:    # !!!
-            return False                   # !!!
-    return True                            # !!!
+    for j in range(len(lst_obj)):          # O(N)
+        if lst_obj[j] in lst_obj[j+1:]:    # O(N)
+            return False                   # O(1)
+    return True                            # O(1)
 
-
+#T(n)=N+N+2
 #############################################################################################
 def check_3(lst_obj):
     """Функция должная вернуть True, если все элементы списка различаются.
@@ -59,12 +59,14 @@ def check_3(lst_obj):
 
     Сложность: !!!
     """
-    lst_copy = list(lst_obj)                 # !!!
-    lst_copy.sort()                          # !!!
-    for i in range(len(lst_obj) - 1):        # !!!
-        if lst_copy[i] == lst_copy[i+1]:     # !!!
-            return False                     # !!!
-    return True                              # !!!
+    lst_copy = list(lst_obj)                 # O(N)
+    lst_copy.sort()                          # O(N Log N)
+    for i in range(len(lst_obj) - 1):        # O(N)
+        if lst_copy[i] == lst_copy[i+1]:     # O(1)
+            return False                     # O(1)
+    return True                              # O(1)
+
+#T(N)=N+NlogN+N+3
 
 #############################################################################################
 
